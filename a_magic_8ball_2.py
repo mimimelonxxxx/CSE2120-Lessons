@@ -39,7 +39,7 @@ VALUE = input("Think your question, think it twice. Then ENTER in the 8 ball. (J
 
 # Processing # 
 if VALUE == "":
-    ANSWER = ANSWERS[random.randrange(1, 20)]
+    ANSWER = ANSWERS[random.randrange(len(ANSWERS))]
 
 # Output #
     print(ANSWER)
