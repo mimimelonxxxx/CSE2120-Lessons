@@ -31,12 +31,8 @@ def menu():
     :return: int 
     """
     global WEAPONS
-    print(f"""Welcome to {WEAPONS[0]}, {WEAPONS[4]}, {WEAPONS[3]}, {WEAPONS[1]}, {WEAPONS[2]}! Please choose your weapon wisely! 
-1. {WEAPONS[0]}
-2. {WEAPONS[1]}
-3. {WEAPONS[2]}
-4. {WEAPONS[3]}
-5. {WEAPONS[4]}""")
+    for i in range(len(WEAPONS)):
+        print(f"{i+1}. {WEAPONS[i]}")
     WEAPON = input("> ")
     WEAPON = checkInt(WEAPON)
     if WEAPON > 0 and WEAPON < 6: 
