@@ -1,4 +1,3 @@
-#d_8ball.py
 """
 title: Magic 8 Ball 2! 
 author: Michelle Jiang

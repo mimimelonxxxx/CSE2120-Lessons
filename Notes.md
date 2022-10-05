@@ -44,4 +44,14 @@ Note: Despite tuples using parentheses and lists using brackets, when declaring 
 
 (IB) Lists in Java, which is what IB pseudocode is based upon, calls dynamic lists "ArrayLists."  
 
-### Arrays 
+### Static vs Dynamic Arrays 
+
+In most cases, either a static or dynamic array can be used to store data. However, there are instances where one is preferable over the other. 
+
+For data that should not be changed independently, static arrays are preferable. 
+
+- Storing screen resolution 
+- Storing a position on a 2D or 3D plane 
+- Storing identification information of an individual 
+
+Oftentimes, tuples are used to store information that is difficult to change. For example, your name links to your student ID. One should never be changed in a program without changing the other. 
