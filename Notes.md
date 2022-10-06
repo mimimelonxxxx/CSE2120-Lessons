@@ -208,6 +208,7 @@ Note: IB follows traditional array limitations of only having one data type in t
 
 ```python
 # you can do this
-ARRAY = []
-# idrk what he means by not creating empty arrays 
+ARRAY = [] # the list is full of null
+# you cant just have a list of nothing 
+ARRAY = 
 ```
