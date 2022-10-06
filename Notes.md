@@ -55,3 +55,159 @@ For data that should not be changed independently, static arrays are preferable.
 - Storing identification information of an individual 
 
 Oftentimes, tuples are used to store information that is difficult to change. For example, your name links to your student ID. One should never be changed in a program without changing the other. 
+
+### Data Structure Indexing and Calling
+
+Frequently, calling on a single value within the data structure is needed instead of the entire structure. Therefore, there needs to be a process of identifying a single value. Each value has a positional index number associated with it. 
+
+```python 
+indexNumber = [0, 1, 2, 3, ...]
+```
+
+To reference a specific value, include the list name followed immediately with the index number in [square brackets]. 
+
+```python 
+A_LIST = ["This", "is", "a", "sentence."]
+print(A_LIST[3]) # sentence. 
+```
+
+Array indexing has forward (head-to-tail) indexing and backwards (tail-to-head) indexing. Either index number will call the data value. 
+
+```python 
+A_LIST = ["This", "is", "a", "sentence."]
+# index     0      1     2      3 
+# index    -4     -3    -2     -1
+print(A_LIST[-2]) # a
+```
+
+To reference a subset of values, you can include a start index value and an end index value separated by a colon. Note that a subset starts at the starting index value, but goes up to and **not** including the end index value. 
+
+```python
+A_LIST = ["This", "is", "a", "sentence."]
+print(A_LIST[-2:2]) # []
+print(A_LIST[1:3]) # ["is", "a"]
+```
+
+There are two shortcuts to creating sublists from the beginning and the end of the list. When starting a sublist from the beginning of the list, omit the first number, and when creating one from the end, omit the last number. 
+
+```python
+A_LIST = ["This", "is", "a", "sentence."]
+print(A_LIST[2:]) # ["a", "sentence."]
+print(A_LIST[:3]) # ["This", "is", "a"]
+```
+
+All lists also have a length property, where the total number of data values is callable using the `len(LIST)` function. 
+
+```python
+len(A_LIST) # 4 
+for i in range len(A_LIST):
+    print(A_LIST[i])
+"""
+This
+is
+a
+sentence. 
+"""
+# the same as doing 
+print(A_LIST[0])
+print(A_LIST[1])
+print(A_LIST[2])
+print(A_LIST[3])
+```
+
+### Manipulating Data in Lists
+
+Data in a dynamic list can undergo many processes. They are often summarized by the acronym CRUD (create, read, update, delete). 
+
+### Creating Data in Arrays
+
+#### Appending Data to the End of a List 
+
+To add data to the tail of a list, use the `append(DATA)` dot function. 
+
+```python
+A_LIST = ["This", "is", "a", "sentence."]
+A_LIST.append("Hi there!")
+print(A_LIST) # ["This", "is", "a", "sentence.", "Hi there!"]
+A_LIST.append("How are you?")
+print(A_LIST) # ["This", "is", "a", "sentence.", "Hi there!", "How are you?"]
+```
+
+#### Inserting Data to a Specific Index Value Within a List 
+
+To add data to a specific index position in the list, use the `index(index, DATA)` dot function. This function should be used sparingly, because it shifts the indexes of the other nodes by one. This may result in mis-addressing data. 
+
+```python
+A_LIST = ["this", "is", "a", "sentence."]
+A_LIST.insert(2, "not") 
+print(A_LIST) # ["this", "is", "not", "a", "sentence."]
+```
+
+### Reading Data in Arrays 
+
+All examples are found in the introduction above. 
+
+```python
+print(A_LIST[1]) # is
+```
+
+### Updating Data in Arrays
+
+REMEMBER that tuples cannot update a single value. Instead, the entire tuple must be re-declared with the new value. To update a single list, the list node can be assigned a new value. 
+
+To update a specific index within an array, simply re-assign the index. This is preferable to inserting data to a specific value because the other nodes are not changed. 
+
+```python 
+A_LIST = ["this", "is", "a", "sentence."]
+A_LIST[0] = "This"
+print(A_LIST) # ["This", "is", "a", "sentence."]
+```
+
+### Deleting Values in Data Arrays 
+
+Deleting data from an array will change the overall length of the array and may re-assign new index values to pre-existing values within the array. 
+
+#### Pop Data Off an Array 
+
+To pop a value off an array, the `pop(index)` dot function will remove the value at the index number. When using `.pop()` data is removed from the list, but not destroyed. If desired, the removed data can be stored in a new variable. 
+
+Note: If no index value is given, `.pop()` will remove the highest index value. 
+
+```python
+A_LIST = ["This", "is", "a", "sentence."]
+A_LIST.pop()
+print(A_LIST) # ["This", "is", "a"]
+A_LIST.pop(1)
+print(A_LIST) # ["This", "a"]
+VARIABLE = A_LIST.pop(0)
+print(VARIABLE) # This
+print(A_LIST) # ["a"]
+```
+
+#### Remove Data From an Array
+
+To remove a value off an array, the `.remove(VALUE)` dot function will remove the first instance of the value while traversing the array from head-to-tail. 
+
+```python
+A_LIST = ["This", "is", "a", "sentence."]
+A_LIST.remove("a")
+print(A_LIST) # ["This", "is", "sentence."]
+
+NEW_LIST = [2, 3, 5, 7, 11, 13, 11, 17]
+NEW_LIST.remove(11)
+print(NEW_LIST) # [2, 3, 5, 7, 13, 11, 17]
+```
+
+### What Data is Stored in an Array? 
+
+In python, an array can store any combination of data types; however, more structerd languages, such as Java, an array can only store one type of data. 
+
+Furthermore, python cannot create *empty* arrays, like other languages. 
+
+Note: IB follows traditional array limitations of only having one data type in the array. 
+
+```python
+# you can do this
+ARRAY = []
+# idrk what he means by not creating empty arrays 
+```
