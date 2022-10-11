@@ -210,5 +210,68 @@ Note: IB follows traditional array limitations of only having one data type in t
 # you can do this
 ARRAY = [] # the list is full of null
 # you cant just have a list of nothing 
-ARRAY = 
+ARRAY = # gives an error 
 ```
+
+## IB Content
+
+### Queueing 
+
+A **queue** is a list of data items, content, etc, stored so that the information is retrievable in the order they are added to a list. It is often referred to as *LILO (Last in, Last out)*, or *FIFO (First in, First out)*. An example of a queue is waiting in line at a water fountain. 
+
+IB Pseudocode uses the dot methods `enqueue` and `dequeue`, which cannot be used in python without first importing the queue library. 
+
+```python 
+A_LIST.enqueue(DATA) # adds items to the end of the list 
+A_LIST.dequeue() # removes item from the start of the list
+
+# the same as 
+A_LIST.append(DATA)
+A_LIST.pop(0)
+```
+### Stacking 
+
+A **stack** is a list of data, items, comments, etc, stored in a way that the most recently stored data is the first to be retrieved. It is often reffered to as *LIFO (Last in, first out)* or *FILO (First in, last out)*. An example of a stack is a pile of books waiting to be returned to the library. The books on the top of the pile were the last ones placed on the pile, but the first ones to be returned. Another example is the undo feature found in most programs. 
+
+IB Pseudocode uses the dot methods `pop` and `push`. `Pop` is the same as the `pop` in python; `push` is the same as the `append` in python. 
+
+```python 
+A_LIST.push(DATA) # adds item to the end of the list 
+A_LIST.pop() # removes item from the end of the list 
+```
+
+## Multi-dimensional Arrays 
+
+An array can store more than primitve data, they can store additional data structures. An array that stores additional data structures is called a multi-dimesional array. THese arrays normally only go two levels deep. Therefore, the most common multi-dimensional arrays are 2D arrays. 
+
+There are three main multi-dimensional arrays and one IB structure: Dictionaries, Parallel arrays,  2-Dimensional arrays, and Linked Lists (IB). 
+
+### Dictionary 
+
+Dictionaries translate information from one data to another. it takes the key and transforms it into the value found within the dictionary. Keys tend to be primitive data types, but can return advanced data types. 
+
+```python 
+MY_INFO = {
+    "first-name": "Michelle",
+    "last-name": "Jiang",
+    "date-created": "2022-10-11",
+    "age": 16,
+    "title": "Dictionary Example"
+}
+print(MY_INFO["first-name"]) # Michelle 
+```
+
+Dictionaries are often used to pass data between multiple programming languages within a single program. 
+
+### Parallel Arrays 
+
+Parallel arrays are two independent lists that share information based on their i nfex number. Parallel arrays are not multi-dimensional arrays in teh sense of having multiple layers of data; instead, they are considered individual lists that use the index number to link data together. 
+
+```python 
+FIRST_NAME = ("Michelle", "Alice")
+LAST_NAME = ("Jiang", "Wong")
+print(FIRST_NAME[1], LAST_NAME[1]) # Alice Wong
+```
+
+Because data must stay aligned so that the index numbers reference the correct values, tuples are often used. 
+
