@@ -265,7 +265,7 @@ Dictionaries are often used to pass data between multiple programming languages 
 
 ### Parallel Arrays 
 
-Parallel arrays are two independent lists that share information based on their i nfex number. Parallel arrays are not multi-dimensional arrays in teh sense of having multiple layers of data; instead, they are considered individual lists that use the index number to link data together. 
+Parallel arrays are two independent lists that share information based on their index number. Parallel arrays are not multi-dimensional arrays in teh sense of having multiple layers of data; instead, they are considered individual lists that use the index number to link data together. 
 
 ```python 
 FIRST_NAME = ("Michelle", "Alice")
@@ -275,3 +275,66 @@ print(FIRST_NAME[1], LAST_NAME[1]) # Alice Wong
 
 Because data must stay aligned so that the index numbers reference the correct values, tuples are often used. 
 
+### 2-Dimensional Arrays 
+A 2-Dimensional array has a list in another list. While there are other data structures, like Objects, 2D arrays are often lists/tuples within other lists/tuples. This is like a list of lists. 2D arrays are often used to express tables (like a paralle array). 
+
+Nodes within a sublist are identified after first identifying the note in the main list using square brackets. (NOTE: a node is a position within the list/tuple.)
+
+```python
+NUMBERS = ((1, 2), (3, 4), (5, 6))
+print(len(NUMBERS)) # 3 
+print(len(NUMBERS[0])) # 2
+print(NUMBERS[0]) # (1, 2)
+print(NUMBERS[1][0]) # 3
+```
+
+NOTE: 2-D arrays can represent tables. 
+
+```python
+NUMBERS = (
+    (1, 2), 
+    (3, 4), 
+    (5, 6)
+)
+```
+
+Each inner tuple represents a row and each index of the sub-lists represent a column. 
+
+#### Updating and Deleting Data in 2D Arrays
+
+Updating and deleting data in 2D arrays is similar to 1D arrays. The program can either update or delete the entire sub-array or a value within a sub-array. 
+
+```python
+NUMBERS = [[1, 2], [3, 4], [5, 6]]
+NUMBERS[0][1] = 5 # [[1, 5], [3, 4], [5, 6]]
+NUMBERS[0] = [4, 5, 6] # [[4, 5, 6], [3, 4], [5, 6]]
+
+NUMBERS.pop(1) # [3, 4] NOTE: pop uses () 
+NUMBERS[0].pop(2) # 6 NOTE: manipulating sub-arrays uses []
+```
+
+NOTE: Lists inside of tuples cannot be edited at all. 
+
+### Using For Loops with 2D Arrays 
+
+For loops are a convenient tool for creating, updating, and reading data within a list. 
+
+```python
+# create an empty array of 7 spaces 
+A_LIST = []
+for i in range(7): 
+    A_LIST.append(None)
+    
+# A_LIST = [None, None, None, None, None, None, None]
+```
+
+2D arrays require nested for loops to create. 
+
+```python 
+A_LIST = []
+# creating a 2D array that represents a 3x4 table 
+for i in range(3): # creates the rows
+    A_LIST.append([])
+    for j in range(4): # creates the columns 
+        A_LIST[i].append(None)
+```
