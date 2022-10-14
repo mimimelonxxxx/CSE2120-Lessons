@@ -99,6 +99,7 @@ if __name__ == "__main__":
     MYDECK = shuffleDeck(MYDECK)
     CARD = drawTopCard(MYDECK) 
     displayCard(CARD)
+    print(MYDECK)
     # or you can do this
     HAND = []
     HAND.append(drawTopCard(MYDECK)) 
