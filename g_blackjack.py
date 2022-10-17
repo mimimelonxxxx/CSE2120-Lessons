@@ -33,6 +33,7 @@ def dealCards(PLAYER, DECK):
     return PLAYER, DECK 
 
 # Processing # 
+
 def calculateHand(HAND):
     """
     calculates the value of the hand 
@@ -56,7 +57,35 @@ def calculateHand(HAND):
                 HAND.append(CARD)
     return CALCULATED
 
-            
+def drawCard(HAND, DECK, VALUE):
+    """
+    asks the player if they want to draw a card
+    :param HAND: list(tuples->int)
+    :param DECK: list(tuples->int)
+    :param VALUE: int 
+    :return: HAND list(tuples->int), DECK list(tuples->int), VALUE int
+    """
+    DRAW = input("Would you like to draw a card? 1 for yes: ")
+    if DRAW == "1": 
+        HAND.append(drawTopCard(DECK))
+        VALUE = calculateHand(HAND)
+        return HAND, DECK, VALUE
+    else: 
+        pass
+
+def calculateWinner(VALUE1, VALUE2): 
+    """
+    calculates and displays the winner 
+    :param VALUE1: int
+    :param VALUE2: int 
+    :return: int 
+    """
+    if VALUE2 > 21 or VALUE1 == 21 or VALUE1 > VALUE2 and VALUE1 < 21 and VALUE2 < 21: 
+        return 1 # if player 1 wins
+    elif VALUE1 > 21 or VALUE2 == 21 or VALUE2 > VALUE1 and VALUE2 < 21 and VALUE2 < 21 or VALUE1 == VALUE2 and VALUE1 < 21 and VALUE2 < 21: 
+        return 2 # if the dealer wins
+    else: 
+        return 0 # to continue drawing 
 
 # Outputs # 
 
@@ -69,9 +98,10 @@ if __name__ == "__main__":
     startGame() 
     # Processing # 
     PLAYER1HAND, DECK = dealCards(PLAYER1HAND, DECK)
-    PLAYER2HAND, DECK = dealCards(PLAYER2HAND, DECK)
+    PLAYER2HAND, DECK = dealCards(PLAYER2HAND, DECK) # starting position 
     HAND1VALUE = calculateHand(PLAYER1HAND)
-    HAND2VALUE = calculateHand(PLAYER2HAND)
-    print(PLAYER1HAND)
-    print(HAND1VALUE)
+    HAND2VALUE = calculateHand(PLAYER2HAND) 
+    displayAllCards(PLAYER1HAND) # shows the player what cards they have 
+    PLAYER1HAND, DECK, HAND1VALUE = drawCard(PLAYER1HAND, DECK, HAND1VALUE) 
+    displayAllCards(PLAYER1HAND) # shows the player their updated hand 
     # Outputs # 
