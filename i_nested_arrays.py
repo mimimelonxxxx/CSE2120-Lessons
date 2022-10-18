@@ -95,3 +95,25 @@ if __name__ == "__main__":
     # Output 
     for row in range(SIZE): 
         print(GRID[row])
+
+        """
+        increasing for the first row 
+decreasing for the next row 
+etc 
+
+append column+1
+append column-1 for odd rows?
+so then row % 2 * column?
+for even rows(row%2 = 0), columns increment
+for odd rows(row%2 = 1), columns decrement
+
+append column + 1 * row + 1
+
+column 1 -- 9 1 
+column 2 -- 7 3 
+column 3 -- 5 5 == SIZE
+column 4 -- 3 7
+column 5 -- 1 9 
+
+so for problem 8 it would be row-1 
+        """
