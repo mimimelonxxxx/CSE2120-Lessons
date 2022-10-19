@@ -338,3 +338,99 @@ for i in range(3): # creates the rows
     for j in range(4): # creates the columns 
         A_LIST[i].append(None)
 ```
+
+## Traversing Arrays
+
+**Traversing** an array uses a `for` loop to access each node in the array. There are two methods of traversing head-to-tail (ascending index number) through the array. 
+
+```python
+A_LIST = [1, 3, 5, 7, 11]
+
+# Method 1: Uses an intermediate variable (often i) for the index 
+
+for i in range(len(A_LIST)):
+    print(A_LIST[i]) 
+
+# Method 2: Uses an intermediate variable to store the data in the node 
+
+for node in A_LIST: 
+    print(node) # basically stores the data in the node as variable node 
+
+# NOTE: Method 2 cannot update the information within the list 
+
+# Method 2 does not store the index/position of the data within the list, while method 1 only has the position, not the data 
+```
+
+It is possible to traverse an array from tail-to-head. 
+
+```python
+for i in range(len(A_LIST)-1, -1, -1) # starts from the end, goes backwards and stops at the start
+    print(A_LIST[i])
+    """
+    11
+    7
+    5
+    ...
+    """
+
+# Example of tail-to-head for loop usage situation
+for i in range(len(A_LIST)-1, -1, -1):
+    A_LIST.pop(i)
+```
+
+Because the range of the loop is determined at the **start** of the loop, any changes to the length of the array will not change the number of iterations for the loop. Therefore, when shortening an array during a for loop, traversing tail-to-head will prevent/reduce *index out of range* errors. 
+
+Arrays can be added together, but they can't be subtracted, multiplied, or divided. (They're not matrices in mathematics.)
+
+```python
+LIST1 = [1, 2, 3]
+LIST2 = [4, 5, 6]
+LISTADD = LIST1 + LIST2 # joins the lists 
+print(LISTADD) # [1, 2, 3, 4, 5, 6] 
+# Can be used for blackjack, so you could add the hand to the bottom of the deck to reset the deck 
+```
+
+Arrays can be assigned multiple variable names. 
+
+```python 
+LIST = [1, 2, 3, 5, 11]
+NEWLIST = LIST # points to the same data structure 
+NEWLIST.pop()
+print(LIST) # [1, 2, 3, 5]
+# Even though it was popped out of NEWLIST, it popped out of the same data structure 
+
+# if you wanted to copy the list, you could just create an empty list and then append each item in the list or use the copy library 
+```
+
+To copy an array, the data has to be appended into a separate, empty array by traversing the array that is being copied. 
+
+## Working with Strings 
+
+ALL strings are lists in disguise. While you are not able to do all actions with a string, as you can with a list, it is possible to create substrings, identify individual characters, and traverse strings. 
+
+```python 
+STRING = "hello world" 
+print(STRING[0]) # h 
+print(STRING[0:2]) # he 
+print(len(STRING)) # 11 (space counts as a character)
+```
+
+Strings can be separated into a list using the `.split()` dot function. Placing a string inside of the paranthesis will split the string using the characters in the `.split()`. 
+
+```python 
+STRING_LIST = STRING.split() # ["hello", "world"]
+STRING_LIST2 = STRING.split(l) # ["he", "", "o wor", "d"] doesn't split at the space anymore 
+# imagine you replaced the delimiter with a comma 
+```
+
+NOTE: when splitting a string, the characters used to identify where the split occurs is called the **delimiter**. 
+
+It is possible to combine a list of **strings** into a string. 
+
+```python 
+STRING_LIST = ["hello", "world"]
+NEWSTRING = " ".join(STRING_LIST) # format is the delimiter .join(VARIABLE)
+print(NEWSTRING) # hello world 
+```
+
+NOTE: the delimiter is specific within quotations with a dot function of `.join(LIST)`. It is added in between each node of the list. Eg: the find and replace tool in documents. (splits at the word, and then rejoins with the replaced word)

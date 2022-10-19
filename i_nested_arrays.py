@@ -75,7 +75,10 @@ if __name__ == "__main__":
     for row in range(SIZE): 
         GRID.append([]) # appends an empty row 
         for column in range(SIZE): 
-            GRID[row].append(column+1+row%2*SIZE) # 
+            if row%2 == 0: 
+                GRID[row].append(column+1+row*SIZE) # 
+            else: 
+                GRID[row].append(column+1-(row*SIZE))
 
     # Output 
     for row in range(SIZE): 
