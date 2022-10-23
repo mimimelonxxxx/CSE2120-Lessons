@@ -79,7 +79,7 @@ if __name__ == "__main__":
             if row%2 == 0: 
                 GRID[row].append(column+1+row*SIZE) # for every row, add increasing numbers 
             else: 
-                GRID[row].append(SIZE**2-SIZE*(row+1)-column-1) # for every row, subtract increasing numbers 
+                GRID[row].append(SIZE+row*SIZE-column) # for every row, subtract increasing numbers 
 
     # Output 
     for row in range(SIZE): 
@@ -94,7 +94,10 @@ if __name__ == "__main__":
     for row in range(SIZE): 
         GRID.append([]) # appends an empty row 
         for column in range(SIZE): 
-            GRID[row].append(row+1+column*SIZE) # gave up for now 
+            if column%2 == 0: 
+                GRID[row].append(row+1+column*SIZE) # for every column, add increasing numbers 
+            else: 
+                GRID[row].append(SIZE+column*SIZE-row) # for every column, subtract increasing numbers 
 
     # Output 
     for row in range(SIZE): 
