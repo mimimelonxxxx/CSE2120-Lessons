@@ -22,21 +22,6 @@ if __name__ == "__main__":
     for row in range(SIZE): 
         print(GRID[row])
 
-    # Problem 4 
-    print("Problem 4:")
-    GRID = []
-
-    # Fill the grid 
-    for row in range(SIZE): 
-        GRID.append([]) # appends an empty row 
-        for column in range(SIZE): 
-            GRID[row].append(SIZE**2-SIZE*(row+1)+column+1) # try to solve the first row first, then continue from there 
-            # you need to subtract a larger number for each row 
-
-    # Output 
-    for row in range(SIZE): 
-        print(GRID[row])
-
     # Problem 1 
     print("Problem 1: ")
 
@@ -66,6 +51,38 @@ if __name__ == "__main__":
     # Output 
     for row in range(SIZE): 
         print(GRID[row])
+
+    # Problem 3
+    print("Problem 3:")
+
+    GRID = []
+
+    # Fill the grid 
+    for row in range(SIZE): 
+        GRID.append([]) # appends an empty row 
+        for column in range(SIZE): 
+            GRID[row].append((SIZE-column)*(row+1))
+
+    # Output 
+    for row in range(SIZE): 
+        print(GRID[row])
+
+
+    # Problem 4 
+    print("Problem 4:")
+    GRID = []
+
+    # Fill the grid 
+    for row in range(SIZE): 
+        GRID.append([]) # appends an empty row 
+        for column in range(SIZE): 
+            GRID[row].append(SIZE**2-SIZE*(row+1)+column+1) # try to solve the first row first, then continue from there 
+            # you need to subtract a larger number for each row 
+
+    # Output 
+    for row in range(SIZE): 
+        print(GRID[row])
+
 
     # Problem 7
     print("Problem 7:")
