@@ -83,6 +83,33 @@ if __name__ == "__main__":
     for row in range(SIZE): 
         print(GRID[row])
 
+    # Problem 5 
+    print("Problem 5:")
+    GRID = []
+
+    # Fill the grid 
+    for row in range(SIZE): 
+        GRID.append([]) # appends an empty row 
+        for column in range(SIZE): 
+            GRID[row].append(SIZE**2-SIZE*row-column)
+
+    # Output 
+    for row in range(SIZE): 
+        print(GRID[row])
+
+    # Problem 6
+    print("Problem 6:")
+    GRID = []
+
+    # Fill the grid 
+    for row in range(SIZE): 
+        GRID.append([]) # appends an empty row 
+        for column in range(SIZE): 
+            GRID[row].append(column*SIZE+row+1)
+
+    # Output 
+    for row in range(SIZE): 
+        print(GRID[row])
 
     # Problem 7
     print("Problem 7:")
